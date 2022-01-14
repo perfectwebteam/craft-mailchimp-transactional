@@ -13,7 +13,7 @@
 		"transactional"
 	],
 	"support": {
-		"docs": "https://github.com/perfectwebteam/craft-mailchimp-transactional/blob/master/README.md",
+		"docs": "https://github.com/perfectwebteam/craft-mailchimp-transactional/blob/main/README.md",
 		"source": "https://github.com/perfectwebteam/craft-mailchimp-transactional",
 		"issues": "https://github.com/perfectwebteam/craft-mailchimp-transactional/issues"
 	},
@@ -38,8 +38,8 @@
 		"handle": "mailchimp-transactional",
 		"developer": "Perfect Web Team",
 		"developerUrl": "https://perfectwebteam.com",
-		"documentationUrl": "https://github.com/perfectwebteam/craft-mailchimp-transactional/blob/master/README.md",
-		"changelogUrl": "https://raw.githubusercontent.com/perfectwebteam/craft-mailchimp-transactional/blob/master/CHANGELOG.md",
+		"documentationUrl": "https://github.com/perfectwebteam/craft-mailchimp-transactional/blob/main/README.md",
+		"changelogUrl": "https://raw.githubusercontent.com/perfectwebteam/craft-mailchimp-transactional/blob/main/CHANGELOG.md",
 		"class": "perfectwebteam\\mailchimptransactional\\MailchimpTransactional"
 	}
 }
