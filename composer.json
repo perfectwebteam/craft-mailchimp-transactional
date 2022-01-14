@@ -1,0 +1,45 @@
+{
+	"name": "perfectwebteam/craft-mailchimp-transactional",
+	"description": "Mailchimp Transactional mailer adapter for Craft CMS.",
+	"type": "craft-plugin",
+	"version": "1.0.0",
+	"keywords": [
+		"craft",
+		"cms",
+		"craftcms",
+		"craft-plugin",
+		"mailchimp transactional",
+		"mailchimp",
+		"transactional"
+	],
+	"support": {
+		"docs": "https://github.com/perfectwebteam/craft-mailchimp-transactional/blob/master/README.md",
+		"source": "https://github.com/perfectwebteam/craft-mailchimp-transactional",
+		"issues": "https://github.com/perfectwebteam/craft-mailchimp-transactional/issues"
+	},
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Perfect Web Team",
+			"homepage": "https://perfectwebteam.com"
+		}
+	],
+	"require": {
+		"craftcms/cms": "^3.7.0",
+		"mailchimp/transactional": "*"
+	},
+	"autoload": {
+		"psr-4": {
+			"perfectwebteam\\mailchimptransactional\\": "src/"
+		}
+	},
+	"extra": {
+		"name": "Mailchimp Transactional",
+		"handle": "mailchimp-transactional",
+		"developer": "Perfect Web Team",
+		"developerUrl": "https://perfectwebteam.com",
+		"documentationUrl": "https://github.com/perfectwebteam/craft-mailchimp-transactional/blob/master/README.md",
+		"changelogUrl": "https://raw.githubusercontent.com/perfectwebteam/craft-mailchimp-transactional/blob/master/CHANGELOG.md",
+		"class": "perfectwebteam\\mailchimptransactional\\MailchimpTransactional"
+	}
+}

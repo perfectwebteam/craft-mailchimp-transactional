@@ -1,0 +1,31 @@
+{% import "_includes/forms" as forms %}
+
+{{ forms.autosuggestField({
+    label: "API Key"|t('mailchimp-transactional'),
+    id: 'apiKey',
+    name: 'apiKey',
+    instructions: "You can find this in your Mailchimp Transactional settings."|t('mailchimptransactional'),
+    suggestEnvVars: true,
+    value: adapter.apiKey,
+    errors: adapter.getErrors('apiKey'),
+}) }}
+
+{{ forms.autosuggestField({
+    label: "Subaccount"|t('mailchimp-transactional'),
+    instructions: "If you want to send mail using a [subaccount], enter its unique identifier here."|t('mandrill')~"\n\n[subaccount]: https://mailchimp.com/developer/transactional/docs/subaccounts/",
+    id: 'subaccount',
+    name: 'subaccount',
+    suggestEnvVars: true,
+    value: adapter.subaccount,
+    errors: adapter.getErrors('subaccount')
+}) }}
+
+{{ forms.autosuggestField({
+    label: "Template Slug"|t('mailchimp-transactional'),
+    instructions: "If you want to send mail using a [template], enter its unique slug here."|t('mandrill')~"\n\n[template]: https://mailchimp.com/developer/transactional/docs/templates-dynamic-content/",
+    id: 'template',
+    name: 'template',
+    suggestEnvVars: true,
+    value: adapter.template,
+    errors: adapter.getErrors('template')
+}) }}
