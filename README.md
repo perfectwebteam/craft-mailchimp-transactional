@@ -36,11 +36,12 @@ composer require perfectwebteam/craft-mailchimp-transactional
 Once Mailchimp Transactional is installed:
 
 1. Go to **Settings** → **Email**.
-2. Change the **Transport Type** setting to **Mailchimp Transactional**.
-3. Enter your **API Key** from the Mailchimp Transactional [Settings](https://mandrillapp.com/settings) page.
-4. Optionally set the **Subaccount** from the Mailchimp Transactional [Subaccounts](https://mandrillapp.com/subaccounts) page.
-5. Optionally set the **Template Slug** from the Mailchimp Transactional [Templates](https://mandrillapp.com/templates) page.
-6. Click **Save**.
+2. Make sure that the **System Email Address** is set to an email for which the domain is a verified [Sending Domain](https://mandrillapp.com/settings/sending-domains). 
+3. Change the **Transport Type** setting to **Mailchimp Transactional**.
+4. Enter your **API Key** from the Mailchimp Transactional [Settings](https://mandrillapp.com/settings) page.
+5. Optionally set the **Subaccount** from the Mailchimp Transactional [Subaccounts](https://mandrillapp.com/subaccounts) page.
+6. Optionally set the **Template Slug** from the Mailchimp Transactional [Templates](https://mandrillapp.com/templates) page.
+7. Click **Save**.
 
 > **Tip:** The API Key, Subaccount and Template Slug settings can be set using environment variables. See [Environmental Configuration](https://craftcms.com/docs/3.x/config/#environmental-configuration) in the Craft docs to learn more about that.
  
