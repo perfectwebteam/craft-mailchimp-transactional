@@ -39,7 +39,7 @@
 		"developer": "Perfect Web Team",
 		"developerUrl": "https://perfectwebteam.com",
 		"documentationUrl": "https://github.com/perfectwebteam/craft-mailchimp-transactional/blob/main/README.md",
-		"changelogUrl": "https://raw.githubusercontent.com/perfectwebteam/craft-mailchimp-transactional/blob/main/CHANGELOG.md",
+		"changelogUrl": "https://raw.githubusercontent.com/perfectwebteam/craft-mailchimp-transactional/main/CHANGELOG.md",
 		"class": "perfectwebteam\\mailchimptransactional\\MailchimpTransactional"
 	}
 }
