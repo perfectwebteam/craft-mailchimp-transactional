@@ -98,7 +98,7 @@ class MailchimpTransactionalAdapter extends BaseTransportAdapter
     /**
      * @inheritdoc
      */
-    public function defineTransport(): array|Swift_Transport
+    public function defineTransport(): array
     {
         return [
             'class' => MailchimpTransactionalTransport::class,

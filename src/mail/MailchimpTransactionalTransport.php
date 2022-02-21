@@ -105,7 +105,7 @@ class MailchimpTransactionalTransport implements Swift_Transport
      * @param string $apiKey
      * @return $this
      */
-    public function setApiKey(string $apiKey): static
+    public function setApiKey(string $apiKey)
     {
         $this->apiKey = $apiKey;
 
@@ -124,7 +124,7 @@ class MailchimpTransactionalTransport implements Swift_Transport
      * @param bool $async
      * @return $this
      */
-    public function setAsync(bool $async): static
+    public function setAsync(bool $async)
     {
         $this->async = $async;
 
@@ -143,7 +143,7 @@ class MailchimpTransactionalTransport implements Swift_Transport
      * @param string|null $subAccount
      * @return $this
      */
-    public function setSubAccount(?string $subAccount): static
+    public function setSubAccount(?string $subAccount)
     {
         $this->subAccount = $subAccount;
 
@@ -162,7 +162,7 @@ class MailchimpTransactionalTransport implements Swift_Transport
      * @param string|null $template
      * @return $this
      */
-    public function setTemplate(?string $template): static
+    public function setTemplate(?string $template)
     {
         $this->template = $template;
 
@@ -181,7 +181,7 @@ class MailchimpTransactionalTransport implements Swift_Transport
      * @return ApiClient
      * @throws Swift_TransportException
      */
-    protected function createMailchimpTransactional(): ApiClient
+    protected function createMailchimpTransactional()
     {
         if ($this->apiKey === null) {
             throw new Swift_TransportException('Cannot create instance of Mailchimp Transactional while API key is NULL');
@@ -288,7 +288,7 @@ class MailchimpTransactionalTransport implements Swift_Transport
      * @param Swift_Mime_SimpleMessage $message
      * @return string|null
      */
-    protected function getMessagePrimaryContentType(Swift_Mime_SimpleMessage $message): string|null
+    protected function getMessagePrimaryContentType(Swift_Mime_SimpleMessage $message): string
     {
         $contentType = $message->getContentType();
 
