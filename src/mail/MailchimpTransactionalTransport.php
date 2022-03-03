@@ -288,7 +288,7 @@ class MailchimpTransactionalTransport implements Swift_Transport
      * @param Swift_Mime_SimpleMessage $message
      * @return string|null
      */
-    protected function getMessagePrimaryContentType(Swift_Mime_SimpleMessage $message): string
+    protected function getMessagePrimaryContentType(Swift_Mime_SimpleMessage $message): ?string
     {
         $contentType = $message->getContentType();
 
