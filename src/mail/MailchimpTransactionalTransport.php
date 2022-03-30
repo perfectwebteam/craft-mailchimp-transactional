@@ -394,7 +394,7 @@ class MailchimpTransactionalTransport implements Swift_Transport
                     'name' => $child->getId(),
                     'content' => base64_encode($child->getBody()),
                 ];
-            } elseif ($child instanceof Swift_Attachment && !($child instanceof Swift_Image)) {
+            } elseif ($child instanceof Swift_Attachment) {
                 $attachments[] = [
                     'type' => $child->getContentType(),
                     'name' => $child->getFilename(),
