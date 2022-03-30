@@ -27,6 +27,7 @@ use Swift_TransportException;
  * @author    Perfect Web Team
  * @package   Mailchimp Transactional
  * @since     1.0.0
+ * @property-read ?array $resultApi
  */
 class MailchimpTransactionalTransport implements Swift_Transport
 {
@@ -217,7 +218,7 @@ class MailchimpTransactionalTransport implements Swift_Transport
 
         //  Use template if configured
         if ($this->template) {
-            $this->resultApi = $mailchimpTransactional->messages->sendTemplate([
+            $response = $mailchimpTransactional->messages->sendTemplate([
                 'template_name' => $this->template,
                 'template_content' => [
                     [
@@ -229,11 +230,17 @@ class MailchimpTransactionalTransport implements Swift_Transport
                 'async' => $this->async
             ]);
         } else {
-            $this->resultApi = $mailchimpTransactional->messages->send([
+            $response = $mailchimpTransactional->messages->send([
                 'message' => $mailchimpTransactionalMessage,
                 'async' => $this->async
             ]);
         }
+
+        if ($response instanceof \Throwable) {
+            throw $response;
+        }
+
+        $this->resultApi = $response;
 
         foreach ($this->resultApi as $item) {
             if ($item->status === 'sent' || $item->status === 'queued') {
@@ -387,7 +394,7 @@ class MailchimpTransactionalTransport implements Swift_Transport
                     'name' => $child->getId(),
                     'content' => base64_encode($child->getBody()),
                 ];
-            } elseif ($child instanceof Swift_Attachment && !($child instanceof Swift_Image)) {
+            } elseif ($child instanceof Swift_Attachment) {
                 $attachments[] = [
                     'type' => $child->getContentType(),
                     'name' => $child->getFilename(),
