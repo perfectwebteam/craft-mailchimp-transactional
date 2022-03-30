@@ -2,6 +2,10 @@
 
 Mailchimp Transactional mailer adapter for Craft CMS.
 
+## 1.0.3 - 2022-03-30
+### Fixed
+- Improve the Mailchimp Transactional API response error logging (thanks @nstCactus)
+
 ## 1.0.2 - 2022-03-03
 ### Fixed
 - Fix PHP typing issue
