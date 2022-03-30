@@ -229,23 +229,18 @@ class MailchimpTransactionalTransport implements Swift_Transport
                 'message' => $mailchimpTransactionalMessage,
                 'async' => $this->async
             ]);
-
-            if ($response instanceof \Throwable) {
-                throw $response;
-            }
-
-            $this->resultApi = $response;
         } else {
             $response = $mailchimpTransactional->messages->send([
                 'message' => $mailchimpTransactionalMessage,
                 'async' => $this->async
             ]);
-             if ($response instanceof \Throwable) {
-                 throw $response;
-             }
-
-            $this->resultApi = $response;
         }
+
+        if ($response instanceof \Throwable) {
+            throw $response;
+        }
+
+        $this->resultApi = $response;
 
         foreach ($this->resultApi as $item) {
             if ($item->status === 'sent' || $item->status === 'queued') {
