@@ -2,7 +2,6 @@
 	"name": "perfectwebteam/craft-mailchimp-transactional",
 	"description": "Mailchimp Transactional mailer adapter for Craft CMS.",
 	"type": "craft-plugin",
-	"version": "1.0.3",
 	"keywords": [
 		"craft",
 		"cms",
@@ -10,7 +9,8 @@
 		"craft-plugin",
 		"mailchimp transactional",
 		"mailchimp",
-		"transactional"
+		"transactional",
+		"mandrill"
 	],
 	"support": {
 		"docs": "https://github.com/perfectwebteam/craft-mailchimp-transactional/blob/main/README.md",
@@ -25,8 +25,8 @@
 		}
 	],
 	"require": {
-		"craftcms/cms": "^3.7.0",
-		"mailchimp/transactional": "*"
+		"php": "^8.0.2",
+		"craftcms/cms": "^4.0.0"
 	},
 	"autoload": {
 		"psr-4": {
@@ -41,5 +41,14 @@
 		"documentationUrl": "https://github.com/perfectwebteam/craft-mailchimp-transactional/blob/main/README.md",
 		"changelogUrl": "https://raw.githubusercontent.com/perfectwebteam/craft-mailchimp-transactional/main/CHANGELOG.md",
 		"class": "perfectwebteam\\mailchimptransactional\\MailchimpTransactional"
+	},
+	"config": {
+		"platform": {
+			"php": "8.0.2"
+		},
+		"allow-plugins": {
+			"yiisoft/yii2-composer": true,
+			"craftcms/plugin-installer": true
+		}
 	}
 }

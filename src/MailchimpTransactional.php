@@ -1,6 +1,6 @@
 <?php
 /**
- * Mailchimp Transactional plugin for Craft CMS 3.x
+ * Mailchimp Transactional plugin for Craft CMS
  *
  * @link      https://perfectwebteam.com
  * @copyright Copyright (c) 2022 Perfect Web Team
