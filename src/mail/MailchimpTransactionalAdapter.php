@@ -1,6 +1,6 @@
 <?php
 /**
- * Mailchimp Transactional plugin for Craft CMS 3.x
+ * Mailchimp Transactional plugin for Craft CMS
  *
  * @link      https://perfectwebteam.com
  * @copyright Copyright (c) 2022 Perfect Web Team
@@ -10,9 +10,9 @@ namespace perfectwebteam\mailchimptransactional\mail;
 
 use Craft;
 use craft\behaviors\EnvAttributeParserBehavior;
+use craft\helpers\App;
 use craft\mail\transportadapters\BaseTransportAdapter;
-use Swift_Events_SimpleEventDispatcher;
-use Swift_Transport;
+use Symfony\Component\Mailer\Transport\AbstractTransport;
 
 /**
  * Mailchimp Transactional Adaptor
@@ -36,17 +36,17 @@ class MailchimpTransactionalAdapter extends BaseTransportAdapter
     /**
      * @var string The API key that should be used
      */
-    public $apiKey;
+    public string $apiKey;
 
     /**
      * @var string The subaccount that should be used
      */
-    public $subaccount;
+    public string $subaccount;
 
     /**
      * @var string The template that should be used
      */
-    public $template;
+    public string $template;
 
     /**
      * @inheritdoc
@@ -98,18 +98,18 @@ class MailchimpTransactionalAdapter extends BaseTransportAdapter
     /**
      * @inheritdoc
      */
-    public function defineTransport(): array
+    public function defineTransport(): array|AbstractTransport
     {
-        return [
-            'class' => MailchimpTransactionalTransport::class,
-            'constructArgs' => [
-                [
-                    'class' => Swift_Events_SimpleEventDispatcher::class
-                ]
-            ],
-            'apiKey' => Craft::parseEnv($this->apiKey),
-            'subAccount' => Craft::parseEnv($this->subaccount) ?: null,
-            'template' => Craft::parseEnv($this->template) ?: null
-        ];
+        $transport = new MailchimpTransactionalTransport(App::parseEnv($this->apiKey));
+
+        if ($this->template) {
+            $transport->setTemplate(App::parseEnv($this->template));
+        }
+
+        if ($this->subaccount) {
+            $transport->setSubaccount(App::parseEnv($this->subaccount));
+        }
+
+        return $transport;
     }
 }
