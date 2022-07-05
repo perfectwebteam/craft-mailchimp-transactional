@@ -36,17 +36,17 @@ class MailchimpTransactionalAdapter extends BaseTransportAdapter
     /**
      * @var string The API key that should be used
      */
-    public string $apiKey;
+    public string $apiKey = '';
 
     /**
      * @var string The subaccount that should be used
      */
-    public string $subaccount;
+    public string $subaccount = '';
 
     /**
      * @var string The template that should be used
      */
-    public string $template;
+    public string $template = '';
 
     /**
      * @inheritdoc
