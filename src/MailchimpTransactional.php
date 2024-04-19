@@ -39,7 +39,7 @@ class MailchimpTransactional extends Plugin
 
         Event::on(
             MailerHelper::class,
-            MailerHelper::EVENT_REGISTER_MAILER_TRANSPORT_TYPES,
+            MailerHelper::EVENT_REGISTER_MAILER_TRANSPORTS,
             static function(RegisterComponentTypesEvent $event) {
                 $event->types[] = MailchimpTransactionalAdapter::class;
             }
