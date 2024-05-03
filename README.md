@@ -6,7 +6,7 @@ This plugin provides a [Mailchimp Transactional](https://mailchimp.com/features/
 
 ## Requirements
 
-This plugin requires Craft CMS 4.0 or later.
+This plugin requires Craft CMS 4.0.0+ or 5.0.0+.
 
 ## Installation
 
