@@ -2,6 +2,10 @@
 
 Mailchimp Transactional mailer adapter for Craft CMS.
 
+## 2.1.0 - 2024-05-03
+### Added
+- Added Craft 5 compatibility.
+
 ## 2.0.1 - 2022-07-05
 ### Fixed
 - Fix typed property error for new installs
