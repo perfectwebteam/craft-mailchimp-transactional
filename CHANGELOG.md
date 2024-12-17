@@ -2,6 +2,10 @@
 
 Mailchimp Transactional mailer adapter for Craft CMS.
 
+## 2.2.0 - 2024-12-17
+### Added
+- Added support for custom Return-Path (thanks [@JodebaDigitalPulse ](https://github.com/JodebaDigitalPulse))
+
 ## 2.1.0 - 2024-05-03
 ### Added
 - Added Craft 5 compatibility.
@@ -19,7 +23,7 @@ Mailchimp Transactional mailer adapter for Craft CMS.
 
 ## 1.0.3 - 2022-03-30
 ### Fixed
-- Improve the Mailchimp Transactional API response error logging (thanks @nstCactus)
+- Improve the Mailchimp Transactional API response error logging (thanks [@nstCactus](https://github.com/nstCactus))
 
 ## 1.0.2 - 2022-03-03
 ### Fixed

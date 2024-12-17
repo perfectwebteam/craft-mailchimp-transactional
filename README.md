@@ -44,5 +44,19 @@ Once Mailchimp Transactional is installed:
 7. Click **Save**.
 
 > **Tip:** The API Key, Subaccount and Template Slug settings can be set using environment variables. See [Environmental Configuration](https://craftcms.com/docs/3.x/config/#environmental-configuration) in the Craft docs to learn more about that.
- 
+
+### Custom Return-Path
+Register Return-Path domains in Mandrill: https://mandrillapp.com/settings/tracking-domains to allow for a custom Return-Path as described here: https://mailchimp.com/developer/transactional/docs/authentication-delivery/#custom-return-path-domains
+
+Configure the Return-Path via your `config/mailchimp-transactional.php` config file by adding:
+```php
+<?php
+
+return [
+	'returnPaths' => [
+		'domain.com' => 'mandrill.domain.com'
+	]
+];
+```
+
 Brought to you by [Perfect Web Team](https://perfectwebteam.com)

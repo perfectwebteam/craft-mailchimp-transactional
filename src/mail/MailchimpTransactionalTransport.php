@@ -8,6 +8,7 @@
 
 namespace perfectwebteam\mailchimptransactional\mail;
 
+use Craft;
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Mailer\Envelope;
@@ -189,17 +190,14 @@ class MailchimpTransactionalTransport extends AbstractApiTransport
             }
 
             $payload['message']['headers'][$header->getName()] = $header->getBodyAsString();
-        }
 
-        /**
-         * register Return-Path domains in Mandrill: https://mandrillapp.com/settings/tracking-domains
-         * to allow for a custom Return-Path as described here: https://mailchimp.com/developer/transactional/docs/authentication-delivery/#custom-return-path-domains
-         */
-        $customConfig = \Craft::$app->config->getConfigFromFile('mailchimp-transactional');
-        $returnPaths = $customConfig['returnPaths'] ?? [];
-        foreach ($returnPaths as $senderDomain => $returnPathDomain) {
-            if (str_contains($envelope->getSender()->getAddress(), "@$senderDomain")) {
-                $payload['message']['return_path_domain'] = $returnPathDomain;
+            $customConfig = Craft::$app->config->getConfigFromFile('mailchimp-transactional');
+            $returnPaths = $customConfig['returnPaths'] ?? [];
+
+            foreach ($returnPaths as $senderDomain => $returnPathDomain) {
+                if (str_contains($envelope->getSender()->getAddress(), "@$senderDomain")) {
+                    $payload['message']['return_path_domain'] = $returnPathDomain;
+                }
             }
         }
 
