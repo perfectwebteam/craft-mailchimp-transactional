@@ -3,7 +3,7 @@
  * Mailchimp Transactional plugin for Craft CMS
  *
  * @link      https://perfectwebteam.com
- * @copyright Copyright (c) 2022 Perfect Web Team
+ * @copyright Copyright (c) 2025 Perfect Web Team
  */
 
 namespace perfectwebteam\mailchimptransactional;

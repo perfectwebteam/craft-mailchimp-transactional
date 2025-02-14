@@ -2,6 +2,10 @@
 
 Mailchimp Transactional mailer adapter for Craft CMS.
 
+## 2.2.1 - 2025-02-14
+### Fixed
+- Settings Model to avoid settings warning (thanks [@JodebaDigitalPulse ](https://github.com/JodebaDigitalPulse))
+
 ## 2.2.0 - 2024-12-17
 ### Added
 - Added support for custom Return-Path (thanks [@JodebaDigitalPulse ](https://github.com/JodebaDigitalPulse))
