@@ -3,12 +3,13 @@
  * Mailchimp Transactional plugin for Craft CMS
  *
  * @link      https://perfectwebteam.com
- * @copyright Copyright (c) 2022 Perfect Web Team
+ * @copyright Copyright (c) 2025 Perfect Web Team
  */
 
 namespace perfectwebteam\mailchimptransactional\mail;
 
 use Craft;
+use perfectwebteam\mailchimptransactional\MailchimpTransactional;
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Mailer\Envelope;
@@ -191,8 +192,7 @@ class MailchimpTransactionalTransport extends AbstractApiTransport
 
             $payload['message']['headers'][$header->getName()] = $header->getBodyAsString();
 
-            $customConfig = Craft::$app->config->getConfigFromFile('mailchimp-transactional');
-            $returnPaths = $customConfig['returnPaths'] ?? [];
+            $returnPaths = MailchimpTransactional::getInstance()->getSettings()->returnPaths ?? [];
 
             foreach ($returnPaths as $senderDomain => $returnPathDomain) {
                 if (str_contains($envelope->getSender()->getAddress(), "@$senderDomain")) {

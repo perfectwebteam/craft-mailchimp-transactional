@@ -3,15 +3,18 @@
  * Mailchimp Transactional plugin for Craft CMS
  *
  * @link      https://perfectwebteam.com
- * @copyright Copyright (c) 2022 Perfect Web Team
+ * @copyright Copyright (c) 2025 Perfect Web Team
  */
 
 namespace perfectwebteam\mailchimptransactional;
 
+use Craft;
+use craft\base\Model;
 use craft\base\Plugin;
 use craft\events\RegisterComponentTypesEvent;
 use craft\helpers\MailerHelper;
 use perfectwebteam\mailchimptransactional\mail\MailchimpTransactionalAdapter;
+use perfectwebteam\mailchimptransactional\models\Settings;
 use yii\base\Event;
 
 /**
@@ -20,6 +23,7 @@ use yii\base\Event;
  * @author    Perfect Web Team
  * @package   Mailchimp Transactional
  * @since     1.0.0
+ * @method Settings getSettings()
  */
 class MailchimpTransactional extends Plugin
 {
@@ -48,5 +52,10 @@ class MailchimpTransactional extends Plugin
                 $event->types[] = MailchimpTransactionalAdapter::class;
             }
         );
+    }
+
+    protected function createSettingsModel(): ?Model
+    {
+        return Craft::createObject(Settings::class);
     }
 }
